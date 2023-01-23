@@ -1,12 +1,14 @@
 # ktool
-
+ktool 1.0 Copyright (c) 2023 by Mohamed Karrab
 this is a tool for penetration testing, some options can be intrusive! Only use it when you have explicit permission from the targeted party! and use it for legal purposes only!
+
+
 
 ## available options:
 ssh bruteforce using username/password lists.
 
 ## usage:
-python3 /.ktool.py [-h] -t TARGET -p PORT -u USERNAMES -w PASSWORDS
+python3 ./ktool.py [-h] -t TARGET -p PORT -u USERNAMES -w PASSWORDS
 
 ### to do:
 Add a command line option to specify the number of threads to use. This will allow you to control the number of parallel connections being made to the target, which can help avoid overloading the server or getting your IP address blocked.

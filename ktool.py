@@ -5,6 +5,15 @@ import logging
 import threading
 
 
+print("""
+██╗░░██╗████████╗░█████╗░░█████╗░██╗░░░░░
+██║░██╔╝╚══██╔══╝██╔══██╗██╔══██╗██║░░░░░
+█████═╝░░░░██║░░░██║░░██║██║░░██║██║░░░░░
+██╔═██╗░░░░██║░░░██║░░██║██║░░██║██║░░░░░
+██║░╚██╗░░░██║░░░╚█████╔╝╚█████╔╝███████╗
+╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░░╚════╝░╚══════╝""")
+
+print("\n\nktool 1.0 Copyright (c) 2023 by Mohamed Karrab\n\n")
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--target", help="Target IP address", required=True)
@@ -42,3 +51,10 @@ for username in usernames:
         t = threading.Thread(target=try_login, args=(username,password))
         t.start()
 
+
+
+
+
+"""
+  time.sleep(3)
+"""
