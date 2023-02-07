@@ -1,7 +1,7 @@
 # ktool
 ktool 1.11 Copyright (c) 2023 by Mohamed Karrab
 
-##Disclaimer: 
+## Disclaimer: 
 ```
 This tool is intended for ethical and legal usage only.
 The authors and contributors of this tool do not condone or promote illegal or unauthorized access to any systems or networks.
