@@ -1,5 +1,5 @@
 # ktool
-ktool 1.0 Copyright (c) 2023 by Mohamed Karrab
+ktool 1.1 Copyright (c) 2023 by Mohamed Karrab
 this is a tool for penetration testing, some options can be intrusive! Only use it when you have explicit permission from the targeted party! and use it for legal purposes only!
 
 
