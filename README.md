@@ -1,16 +1,31 @@
 # ktool
-ktool 1.1 Copyright (c) 2023 by Mohamed Karrab
-this is a tool for penetration testing, some options can be intrusive! Only use it when you have explicit permission from the targeted party! and use it for legal purposes only!
+ktool 1.11 Copyright (c) 2023 by Mohamed Karrab
 
-![ktool](https://user-images.githubusercontent.com/107933631/214176522-38495347-d387-46ab-9b5b-a21ce094b0a2.png)
+## Disclaimer: 
+```
+This tool is intended for ethical and legal usage only.
+The authors and contributors of this tool do not condone or promote illegal or unauthorized access to any systems or networks.
+They are not liable for any damages or losses that may result from its use either.
+It is the user's responsibility to ensure that their use of this tool is in compliance with all relevant laws and regulations.
+```
 
-## available options:
-ssh bruteforce using username/password lists.
+                  ██╗░░██╗████████╗░█████╗░░█████╗░██╗░░░░░
+                  ██║░██╔╝╚══██╔══╝██╔══██╗██╔══██╗██║░░░░░
+                  █████═╝░░░░██║░░░██║░░██║██║░░██║██║░░░░░
+                  ██╔═██╗░░░░██║░░░██║░░██║██║░░██║██║░░░░░
+                  ██║░╚██╗░░░██║░░░╚█████╔╝╚█████╔╝███████╗
+                  ╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░░╚════╝░╚══════╝
 
-## usage:
-python3 ./ktool.py [-h] -t TARGET -p PORT -u USERNAMES -w PASSWORDS
+## available options
+```
+1) ssh bruteforce using username/password lists
+2) wordlist generation/modification
+```
 
 ### to do:
+```
+Fix the exception handling
+
 Add a command line option to specify the number of threads to use. This will allow you to control the number of parallel connections being made to the target, which can help avoid overloading the server or getting your IP address blocked.
 
 Add a command line option to specify the time interval between connection attempts. This can be useful to avoid overwhelming the server with too many requests at once.
@@ -28,3 +43,4 @@ Add a verbose option, that will allow you to see more details about the login at
 Add a function that will save the successful login credentials in a file.
 
 Add a function that will check if the server has a honeypot, and if it does, it will stop the attack.
+```
