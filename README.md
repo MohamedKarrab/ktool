@@ -1,5 +1,5 @@
 # ktool
-ktool 1.11 Copyright (c) 2023 by Mohamed Karrab
+ktool 1.13 Copyright (c) 2023 by Mohamed Karrab
 
 ## Disclaimer: 
 ```
@@ -24,6 +24,14 @@ It is the user's responsibility to ensure that their use of this tool is in comp
 
 ### to do:
 ```
+Work with TDD, BDD
+
+Add colors
+
+Seperate the files by function, better the banners
+
+Add arrows movement when taking input
+
 Fix the exception handling
 
 Add a command line option to specify the number of threads to use. This will allow you to control the number of parallel connections being made to the target, which can help avoid overloading the server or getting your IP address blocked.
