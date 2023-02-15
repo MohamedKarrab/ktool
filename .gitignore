@@ -1,7 +1,6 @@
-.idea
 venv
 original
 ssh_brute_force.log
 w_gen.log
-__pycache__
-
+w_mod.log
+OUTPUT

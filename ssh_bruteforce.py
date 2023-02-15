@@ -5,15 +5,7 @@ import time
 import argparse
 import logging
 import threading
-import itertools
-import subprocess
-
-
-
-def sys_arg_cleaner():
-    prog_name = sys.argv[0]
-    sys.argv.clear()
-    sys.argv.append(prog_name)
+from utilities import *
 
 def ssh_bruteforce():
     choice = 1000
@@ -24,7 +16,7 @@ def ssh_bruteforce():
         print("\033[4mktool\033[0m" + "> ", end="")
         arguments = input()
         if (arguments == "exit"):
-            return
+            return False
 
         sys.argv += arguments.split()
 
@@ -35,10 +27,15 @@ def ssh_bruteforce():
             parser.add_argument("-u", "--usernames", help="Usernames file", required=True)
             parser.add_argument("-w", "--passwords", help="Passwords file", required=True)
             args= parser.parse_args()
+        except argparse.ArgumentTypeError as e:
+            print(e)
+            return True
+        except argparse.ArgumentError as e:
+            print(e)
+            return True
         except:
             time.sleep(0.1)
-            ssh_bruteforce()
-            return
+            return True
         logging.basicConfig(filename='ssh_brute_force.log', level=logging.INFO)
 
         try:
@@ -47,18 +44,10 @@ def ssh_bruteforce():
             ssh_bruteforce()
             with open(args.passwords) as f:
                 passwords = f.read().splitlines()
-        except argparse.ArgumentTypeError as e:
-            print(e)
-            ssh_bruteforce()
-            return
-        except argparse.ArgumentError as e:
-            print(e)
-            ssh_bruteforce()
-            return
+
         except:
             print("the specified usernames/passwords file doesn't exist")
-            ssh_bruteforce()
-            return
+            return True
 
         def try_login(username, password):
             try:
@@ -78,3 +67,5 @@ def ssh_bruteforce():
             for password in passwords:
                 t = threading.Thread(target=try_login, args=(username, password))
                 t.start()
+
+    return True
