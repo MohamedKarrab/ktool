@@ -1,5 +1,5 @@
 # ktool
-ktool 1.13 Copyright (c) 2023 by Mohamed Karrab
+ktool 1.2.1 Copyright (c) 2023 by Mohamed Karrab
 
 ## Disclaimer: 
 ```
@@ -20,10 +20,18 @@ It is the user's responsibility to ensure that their use of this tool is in comp
 ```
 1) ssh bruteforce using username/password lists
 2) wordlist generation/modification
+3) file downloader
+4) information gathering
 ```
 
 ### to do:
 ```
+Add more search engines for the information gatherer
+
+Expand the USER_AGENTS list
+
+Add setup.py
+
 Work with TDD, BDD
 
 Add colors

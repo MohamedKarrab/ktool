@@ -4,3 +4,4 @@ ssh_brute_force.log
 w_gen.log
 w_mod.log
 OUTPUT
+__pycache__

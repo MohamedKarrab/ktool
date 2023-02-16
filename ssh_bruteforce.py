@@ -7,6 +7,7 @@ import logging
 import threading
 from utilities import *
 
+
 def ssh_bruteforce():
     choice = 1000
     sys_arg_cleaner()
@@ -26,7 +27,7 @@ def ssh_bruteforce():
             parser.add_argument("-p", "--port", help="Target port", required=True)
             parser.add_argument("-u", "--usernames", help="Usernames file", required=True)
             parser.add_argument("-w", "--passwords", help="Passwords file", required=True)
-            args= parser.parse_args()
+            args = parser.parse_args()
         except argparse.ArgumentTypeError as e:
             print(e)
             return True

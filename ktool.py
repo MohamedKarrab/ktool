@@ -1,15 +1,8 @@
-import os
-import sys
-import paramiko
-import time
-import argparse
-import logging
-import threading
-import itertools
 import subprocess
 from ssh_bruteforce import ssh_bruteforce
 from w_gen_mod import w_gen_mod
 from file_downloader import file_downloader
+from information_gatherer import information_gatherer
 from utilities import *
 
 def main():
@@ -24,13 +17,14 @@ def main():
         ██║░╚██╗░░░██║░░░╚█████╔╝╚█████╔╝███████╗
         ╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░░╚════╝░╚══════╝"""
 
-        welcome+= "\n\nktool 1.2 Copyright (c) 2023 by Mohamed Karrab\n\n"
+        welcome+= "\n\nktool 1.2.1 Copyright (c) 2023 by Mohamed Karrab\n\n"
 
         welcome+= """Select from the menu:
             1) ssh bruteforce
             2) wordlist generation/modification
             3) file downloader
-            4) exit
+            4) information gathering
+            5) exit
 """
         welcome += "\033[4mktool\033[0m" + "> "
         print(welcome,end="")
@@ -46,6 +40,9 @@ def main():
             while(file_downloader()==True):
                 sys_arg_cleaner()
         elif (choice == "4"):
+            while(information_gatherer()==True):
+                sys_arg_cleaner()
+        elif (choice == "5"):
             sys.exit()
         print("")
         main()
