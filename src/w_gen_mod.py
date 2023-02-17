@@ -15,7 +15,7 @@ def w_gen_mod():
     choice = 1000
     sys_arg_cleaner()
     while (choice != "1" and choice != "2" and choice != "3"):
-        print("""Select from the menu:
+        print("""Select an option:
             1) generate a wordlist from scratch
             2) generate a wordlist from an existing one
             3) go back""")

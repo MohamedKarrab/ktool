@@ -19,7 +19,7 @@ def main():
 
         welcome+= "\n\nktool 1.2.1 Copyright (c) 2023 by Mohamed Karrab\n\n"
 
-        welcome+= """Select from the menu:
+        welcome+= """Select an option:
             1) ssh bruteforce
             2) wordlist generation/modification
             3) file downloader

@@ -1,5 +1,5 @@
 # ktool
-ktool 1.2.1 Copyright (c) 2023 by Mohamed Karrab
+ktool 1.2.2 Copyright (c) 2023 by Mohamed Karrab
 
 ## Disclaimer: 
 ```
@@ -22,6 +22,14 @@ It is the user's responsibility to ensure that their use of this tool is in comp
 2) wordlist generation/modification
 3) file downloader
 4) information gathering
+```
+## Insrallation
+### Linux
+```
+git clone https://github.com/MohamedKarrab/ktool
+cd ktool
+pip3 install -r requirements.txt 
+sudo python3 ./setup.py
 ```
 
 ### to do:
