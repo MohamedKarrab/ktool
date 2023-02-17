@@ -23,7 +23,7 @@ It is the user's responsibility to ensure that their use of this tool is in comp
 3) file downloader
 4) information gathering
 ```
-## Insrallation
+## Installation
 ### Linux
 ```
 git clone https://github.com/MohamedKarrab/ktool
