@@ -1,5 +1,5 @@
 # ktool
-ktool 1.2.2 Copyright (c) 2023 by Mohamed Karrab
+ktool 1.2.4 Copyright (c) 2023 by Mohamed Karrab
 
 ## Disclaimer: 
 ```

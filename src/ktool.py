@@ -7,7 +7,7 @@ from utilities import *
 
 def main():
     choice = 1000
-    while (choice != 3):
+    while (True):
         subprocess.run(['clear'])
         welcome = r"""
         ██╗░░██╗████████╗░█████╗░░█████╗░██╗░░░░░
@@ -17,7 +17,7 @@ def main():
         ██║░╚██╗░░░██║░░░╚█████╔╝╚█████╔╝███████╗
         ╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░░╚════╝░╚══════╝"""
 
-        welcome+= "\n\nktool 1.2.1 Copyright (c) 2023 by Mohamed Karrab\n\n"
+        welcome+= "\n\nktool 1.2.4 Copyright (c) 2023 by Mohamed Karrab\n\n"
 
         welcome+= """Select an option:
             1) ssh bruteforce

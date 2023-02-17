@@ -3,6 +3,7 @@ import time
 import argparse
 import logging
 import itertools
+import os
 from utilities import *
 
 def sys_arg_cleaner():
@@ -58,20 +59,23 @@ def w_gen_mod():
                         time.sleep(0.1)
                         return True
 
-                    logging.basicConfig(filename='w_gen.log', level=logging.INFO)
-
                     if (args.min_length > args.max_length):
                         print("min_length can't exceed max_length")
                         return True
 
-                    if (args.max_length > 4):
-                        print("MAX LENGTH CAN'T EXCEED 4, YOU DON'T WANNA RUN OUT OF STORAGE, THIS WILL BE FIXED SOON!")
+                    if (args.max_length > 5):
+                        print("MAX LENGTH CAN'T EXCEED 5, YOU DON'T WANNA RUN OUT OF STORAGE, THIS WILL BE FIXED SOON!")
                         return True
 
-                    with open(args.output, 'w') as f:
-                        for word in generate_wordlist(args.min_length, args.max_length, args.charset):
-                            f.write(word + '\n')
-                    print("wordlist generated in " + args.output)
+                    try:
+                        args.output = os.path.abspath(args.output)
+                        with open(args.output, 'w') as f:
+                            for word in generate_wordlist(args.min_length, args.max_length, args.charset):
+                                f.write(word + '\n')
+                        print("wordlist generated in " + args.output)
+                    except Exception as e:
+                        print(e)
+                        return True
 
             while(w_gen()==True):
                 pass
@@ -111,22 +115,24 @@ def w_gen_mod():
                     except:
                         time.sleep(0.1)
                         return True
-                    logging.basicConfig(filename='w_gen.log', level=logging.INFO)
 
                     try:
+                        args.output = os.path.abspath(args.output)
+                        args.wordlist = os.path.abspath(args.wordlist)
+
                         with open(args.wordlist) as input_file:
                             words = input_file.read().splitlines()
-                    except:
-                        print("The specified wordlist file doesn't exist")
+
+                        with open(args.output, 'w') as output_file:
+                            for word in words:
+                                w_len = len(word)
+                                if (w_len >= args.min_length and w_len <= args.max_length):
+                                    output_file.write(word + "\n")
+                        print("wordlist generated in " + args.output)
+
+                    except Exception as e:
+                        print(e)
                         return True
-
-                    with open(args.output, 'w') as output_file:
-                        for word in words:
-                            w_len = len(word)
-                            if (w_len >= args.min_length and w_len <= args.max_length):
-                                output_file.write(word + "\n")
-                    print("wordlist generated in " + args.output)
-
             while(w_mod()==True):
                 pass
 

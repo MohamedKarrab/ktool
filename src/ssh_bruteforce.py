@@ -37,17 +37,19 @@ def ssh_bruteforce():
         except:
             time.sleep(0.1)
             return True
-        logging.basicConfig(filename='ssh_brute_force.log', level=logging.INFO)
 
         try:
+            args.usernames = os.path.abspath(args.usernames)
+            args.passwords = os.path.abspath(args.passwords)
             with open(args.usernames) as f:
                 usernames = f.read().splitlines()
             ssh_bruteforce()
             with open(args.passwords) as f:
                 passwords = f.read().splitlines()
 
-        except:
-            print("the specified usernames/passwords file doesn't exist")
+        except Exception as e:
+            #print("the specified usernames/passwords file doesn't exist")
+            print(e)
             return True
 
         def try_login(username, password):
