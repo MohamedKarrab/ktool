@@ -5,6 +5,7 @@ from utilities import *
 import urllib.request
 import urllib.parse
 import os
+import readline
 def file_downloader():
     choice = 1000
     sys_arg_cleaner()

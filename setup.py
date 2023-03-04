@@ -18,8 +18,7 @@ def install_ktool():
     try:
         with open(os.path.join(BIN_DIR, 'ktool'), 'w') as f:
             f.write('#!/bin/sh\n')
-            f.write('cd {}\n'.format(os.path.join(KTOOL_DIR, 'src')))
-            f.write('python3 ./ktool.py\n')
+            f.write('python3 {}\n'.format(os.path.join(KTOOL_DIR, 'src', 'ktool.py')))
         os.chmod(os.path.join(BIN_DIR, 'ktool'), 0o755)
     except Exception as e:
         print('[-] Error :', e)

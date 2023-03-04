@@ -6,6 +6,7 @@ import time
 from googlesearch import search
 # pip install googlesearch-python
 import random
+import readline
 
 
 USER_AGENTS = [

@@ -3,6 +3,7 @@ from ssh_bruteforce import ssh_bruteforce
 from w_gen_mod import w_gen_mod
 from file_downloader import file_downloader
 from information_gatherer import information_gatherer
+import readline
 from utilities import *
 
 def main():
@@ -17,7 +18,7 @@ def main():
         ██║░╚██╗░░░██║░░░╚█████╔╝╚█████╔╝███████╗
         ╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░░╚════╝░╚══════╝"""
 
-        welcome+= "\n\nktool 1.2.4 Copyright (c) 2023 by Mohamed Karrab\n\n"
+        welcome+= "\n\nktool 1.3.4 Copyright (c) 2023 by Mohamed Karrab\n\n"
 
         welcome+= """Select an option:
             1) ssh bruteforce

@@ -4,6 +4,7 @@ import argparse
 import logging
 import itertools
 import os
+import readline
 from utilities import *
 
 def sys_arg_cleaner():
@@ -120,7 +121,7 @@ def w_gen_mod():
                         args.output = os.path.abspath(args.output)
                         args.wordlist = os.path.abspath(args.wordlist)
 
-                        with open(args.wordlist) as input_file:
+                        with open(args.wordlist, errors='ignore') as input_file:
                             words = input_file.read().splitlines()
 
                         with open(args.output, 'w') as output_file:

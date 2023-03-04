@@ -1,5 +1,5 @@
 # ktool
-ktool 1.2.4 Copyright (c) 2023 by Mohamed Karrab
+ktool 1.3.4 Copyright (c) 2023 by Mohamed Karrab
 
 ## Disclaimer: 
 ```
@@ -23,7 +23,11 @@ It is the user's responsibility to ensure that their use of this tool is in comp
 3) file downloader
 4) information gathering
 ```
-## Insrallation
+## usage
+```
+just use -h for more information on each option.
+```
+## Installation
 ### Linux
 ```
 git clone https://github.com/MohamedKarrab/ktool
@@ -38,27 +42,16 @@ Add more search engines for the information gatherer
 
 Expand the USER_AGENTS list
 
-Add setup.py
+Add setup.py (done)
 
 Work with TDD, BDD
 
 Add colors
 
-Seperate the files by function, better the banners
+Seperate the files by function, better the banners (done)
 
-Add arrows movement when taking input
+Add arrows movement when taking input (done)
 
-Fix the exception handling
+Fix the exception handling (done)
 
-Add a command line option to specify the number of threads to use. This will allow you to control the number of parallel connections being made to the target, which can help avoid overloading the server or getting your IP address blocked.
-
-Add a command line option to specify the time interval between connection attempts. This can be useful to avoid overwhelming the server with too many requests at once.
-
-Add a function that will check if the server has a rate limit for login attempts. If it does and you exceed that limit the script will stop.
-
-Add a verbose option, that will allow you to see more details about the login attempts, such as the time it took to check the login credentials.
-
-Add a function that will save the successful login credentials in a file.
-
-Add a function that will check if the server has a honeypot, and if it does, it will stop the attack.
 ```

