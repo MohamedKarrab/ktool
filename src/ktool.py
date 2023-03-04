@@ -6,6 +6,7 @@ from information_gatherer import information_gatherer
 import readline
 from utilities import *
 
+
 def main():
     choice = 1000
     while (True):
