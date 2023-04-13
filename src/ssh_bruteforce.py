@@ -13,12 +13,12 @@ from utilities import *
 def ssh_bruteforce():
     choice = 1000
     sys_arg_cleaner()
-    while (choice != "exit"):
-        print("type 'exit' to go back.")
+    while (choice != "0"):
+        print("type '0' to go back.")
         print("""-h or --help for help""")
         print("\033[4mktool\033[0m" + "> ", end="")
         arguments = input()
-        if (arguments == "exit"):
+        if (arguments == "0"):
             return False
 
         sys.argv += arguments.split()
@@ -68,7 +68,6 @@ def ssh_bruteforce():
                 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
                 ssh.connect(args.target, port=args.port, username=username, password=password)
                 print(f"[+] Login Successful! {username}:{password}")
-                logging.info(f"[+] Login Successful! {username}:{password}")
                 ssh.close()
             except paramiko.ssh_exception.AuthenticationException:
                 print(f"[-] Login Failed! {username}:{password}")

@@ -9,12 +9,12 @@ import readline
 def file_downloader():
     choice = 1000
     sys_arg_cleaner()
-    while (choice != "exit"):
-        print("type 'exit' to go back.")
+    while (choice != "0"):
+        print("type '0' to go back.")
         print("""-h or --help for help""")
         print("\033[4mktool\033[0m" + "> ", end="")
         arguments = input()
-        if (arguments == "exit"):
+        if (arguments == "0"):
             return False
 
         sys.argv += arguments.split()

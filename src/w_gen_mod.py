@@ -28,12 +28,12 @@ def w_gen_mod():
             def w_gen():
                 sys_arg_cleaner()
                 gen_choice = 1000
-                while (gen_choice != "exit"):
-                    print("type 'exit' to go back.")
+                while (gen_choice != "0"):
+                    print("type '0' to go back.")
                     print("""-h or --help for help""")
                     print("\033[4mktool\033[0m" + "> ", end="")
                     arguments = input()
-                    if (arguments == "exit"):
+                    if (arguments == "0"):
                         return False
                     sys.argv += arguments.split()
 
@@ -86,11 +86,11 @@ def w_gen_mod():
             def w_mod():
                 sys_arg_cleaner()
                 while (True):
-                    print("type 'exit' to go back.")
+                    print("type '0' to go back.")
                     print("""-h or --help for help""")
                     print("\033[4mktool\033[0m" + "> ", end="")
                     arguments = input()
-                    if (arguments == "exit"):
+                    if (arguments == "0"):
                         return False
 
                     sys.argv += arguments.split()
