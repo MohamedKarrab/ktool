@@ -22,6 +22,7 @@ It is the user's responsibility to ensure that their use of this tool is in comp
 2) wordlist generation/modification
 3) file downloader
 4) information gathering
+5) port scanning
 ```
 ## usage
 ```
