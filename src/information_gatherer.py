@@ -20,6 +20,8 @@ USER_AGENTS = [
 
 
 def information_gatherer(args):
+    print("The information gatherer is currently out of service :(")
+    return
     domain = args.domain
 
     found_emails = set()
