@@ -69,8 +69,6 @@ def main():
     except AttributeError:
         parser.error("too few arguments")
 
-    main()
-
 
 if __name__ == '__main__':
     main()
