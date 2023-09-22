@@ -7,3 +7,4 @@ OUTPUT
 __pycache__
 .idea
 src/tests.txt
+notes.md
