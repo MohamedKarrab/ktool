@@ -1,5 +1,5 @@
 # ktool
-ktool 1.4.6 Copyright (c) 2023 by Mohamed Karrab
+ktool 1.5.6 Copyright (c) 2023 by Mohamed Karrab
 
 ## Disclaimer: 
 ```
@@ -26,7 +26,17 @@ It is the user's responsibility to ensure that their use of this tool is in comp
 ```
 ## usage
 ```
-just use -h for more information on each option.
+ktool [command] [options] 
+            
+commands:
+            ktool down  - Downloads a file from a specified url
+            ktool wgen  - Generates a wordlist
+            ktool wmod  - Modifies a wordlist
+            ktool pscan - Port scanning
+            ktool info  - Gather information about a specified domain
+            ktool ssh   - ssh bruteforce
+
+Use "ktool [command] -h" for more information about a specific command.  
 ```
 ## Installation
 ### Linux
@@ -39,6 +49,10 @@ sudo python3 ./setup.py
 
 ### to do:
 ```
+Add more features
+
+Add a better information gathering script
+
 Add more search engines for the information gatherer
 
 Expand the USER_AGENTS list

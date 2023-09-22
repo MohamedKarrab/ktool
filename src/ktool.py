@@ -9,10 +9,21 @@ import argparse
 
 def main():
 
-    welcome = "\n\nktool 1.3.5 Copyright (c) 2023 by Mohamed Karrab\n\n"
-    # print(welcome, end="")
+    version = "1.5.6"
+    usage = """
+            ktool [command] [options] 
+            
+commands:
+            ktool down  - Downloads a file from a specified url
+            ktool wgen  - Generates a wordlist
+            ktool wmod  - Modifies a wordlist
+            ktool pscan - Port scanning
+            ktool info  - Gather information about a specified domain
+            ktool ssh   - ssh bruteforce
 
-    parser = argparse.ArgumentParser(exit_on_error=False)
+Use "ktool [command] -h" for more information about a specific command.            
+"""
+    parser = argparse.ArgumentParser(usage=usage)
     subparsers = parser.add_subparsers(help='sub-command help')
 
     parser_down = subparsers.add_parser('down', help='file download help', usage="-u url [-o] outputFile")
@@ -67,7 +78,18 @@ def main():
     try:
         args.func(args)
     except AttributeError:
-        parser.error("too few arguments")
+        welcome = r"""
+                ██╗░░██╗████████╗░█████╗░░█████╗░██╗░░░░░
+                ██║░██╔╝╚══██╔══╝██╔══██╗██╔══██╗██║░░░░░
+                █████═╝░░░░██║░░░██║░░██║██║░░██║██║░░░░░
+                ██╔═██╗░░░░██║░░░██║░░██║██║░░██║██║░░░░░
+                ██║░╚██╗░░░██║░░░╚█████╔╝╚█████╔╝███████╗
+                ╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░░╚════╝░╚══════╝"""
+
+        welcome += f"\n\nktool {version} Copyright (c) 2023 by Mohamed Karrab\n\n"
+        print(welcome, end="")
+        print("usage:", end="")
+        print(parser.usage, end="")
 
 
 if __name__ == '__main__':
