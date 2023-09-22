@@ -6,3 +6,4 @@ w_mod.log
 OUTPUT
 __pycache__
 .idea
+src/tests.txt
